@@ -13,7 +13,7 @@ ReactDOM.render(
     <ConnectedRouter history={history}>
       <div>
         <ul>
-          <li> <Link exact={true} to='/'>首页 </Link></li>
+          <li> <Link to='/'>首页 </Link></li>
           <li> <Link to='/counter'>计数器 </Link></li>
         </ul>
         <Route path='/' exact={true} component={Home} />

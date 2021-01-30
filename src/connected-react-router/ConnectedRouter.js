@@ -4,9 +4,12 @@ import { Router } from 'react-router-dom'
 import {locationChange} from './actions'
 
 class ConnectedRouter extends React.Component {
+    static contextType = ReactReduxContext
     componentDidMount(){
+        console.log('context',this.context.store.getState());
         this.props.history.listen((location,action)=>{
-            this.props.dispatch(locationChange(location,action))
+            this.context.store.dispatch(locationChange(location,action))
+            // this.props.dispatch(locationChange(location,action))
         })
     }
     render() {
@@ -19,4 +22,5 @@ class ConnectedRouter extends React.Component {
     }
 }
 
-export default connect(state => state)(ConnectedRouter);
+export default ConnectedRouter
+// export default connect(state => state)(ConnectedRouter);
