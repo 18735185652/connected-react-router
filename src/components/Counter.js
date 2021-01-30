@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 class Counter extends React.Component{
   
    render(){
-    console.log('props',this.props);
         return (
             <div>
                 <div>{this.props.number}</div>
